@@ -12,15 +12,14 @@ class Client {
 	  ip_address = input.next();
 	  if(ip_address.equals("d")){
 	    ip_address = "127.0.0.1";
-	  }
-	  System.out.println("Enter a port, default port is 9876, enter 'd' for default");
-	  portStr = input.next();	
-	  if(portStr.equals("d")){
 	    portStr = "9876";
-	  }
-	  if(checkIP(ip_address) != true || checkPort(portStr) != true){
-	    System.out.print("Not a valid ip address or port.");
-	    System.exit(0);
+	  } else {
+	    System.out.println("Enter a port, default port is 9876");
+	    portStr = input.next();
+	    if(checkIP(ip_address) != true || checkPort(portStr) != true){
+	      System.out.print("Not a valid ip address or port.");
+	      System.exit(0);
+	    }
 	  }
 	  System.out.println("Enter a domain name: ");
 	  String message = inFromUser.readLine();
